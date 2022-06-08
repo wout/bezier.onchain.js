@@ -32,7 +32,7 @@ export const Bez = {
     + Bez.r(ps[i], d),
 
   /**
-   * Calculates an builds a control point.
+   * Calculates and builds a control point.
    * 
    * @param {Point} c - Current point.
    * @param {Point} p - Previous point.
