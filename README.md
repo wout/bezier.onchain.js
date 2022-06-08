@@ -7,6 +7,10 @@ This library is intended for use in environments where the available storage
 space is very limited; like blockchains for example. Everything is stripped down
 to the bare essentials.
 
+![GitHub](https://img.shields.io/github/license/onchainjs/bezier.onchain.js)
+![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/onchainjs/bezier.onchain.js)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/onchainjs/bezier.onchain.js/bezier.onchain.js%20CI)
+
 ## Usage
 Pass an array of points to the build method:
 
