@@ -41,16 +41,19 @@ argument:
 
 ```js
 Bez.build(ps, false, 0.5)
+// ↓↓↓
 ```
 ![Smoothing of 0.5](/examples/smoothing-05.svg)
 
 ```js
 Bez.build(ps, false, 1)
+// ↓↓↓
 ```
 ![Smoothing of 1.0](/examples/smoothing-10.svg)
 
 ```js
 Bez.build(ps, false, 0)
+// ↓↓↓
 ```
 ![Smoothing of 0](/examples/smoothing-00.svg)
 
