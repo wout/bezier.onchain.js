@@ -1,6 +1,6 @@
 # bezier.onchain.js
 
-A micro JS library (491 bytes) for building SVG bezier paths from an arrays of
+A micro JS library (491 bytes) for building SVG bezier paths from arrays of
 points.
 
 This library is intended for use in environments where the available storage
