@@ -32,8 +32,8 @@ export const Bez = {
    * Calculates and builds a control point.
    * 
    * @param {Point} c - Current point.
-   * @param {Point} p - Previous point.
-   * @param {Point} n - Next point.
+   * @param {Point|null} p - Previous point.
+   * @param {Point|null} n - Next point.
    * @param {number} s - Smoothing of curve.
    * @param {number} d - Decimal places for rounding of points.
    * @param {boolean|null} r - Reverse direction of control point.
@@ -47,7 +47,7 @@ export const Bez = {
    * Builds the control point.
    *
    * @param {Point} c - Current point.
-   * @param {number} l - Length fo control handle.
+   * @param {number} l - Length of control handle.
    * @param {number} a - Angle of control handle.
    * @param {number} o - Offset for reversed control handle.
    * @param {number} d - Decimal places for rounding of points.
@@ -61,7 +61,7 @@ export const Bez = {
    * @param {number} x - X-position of control point.
    * @param {number} y - Y-position of control point.
    * @param {number} s - Smoothing of curve.
-   * @returns {Point} The control point.
+   * @returns {[number, number]} Length and angle of the control handle.
    */
   lp: (x, y, s) => [Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2)) * s, Math.atan2(y, x)],
 
