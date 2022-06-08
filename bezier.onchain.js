@@ -12,8 +12,8 @@ export const Bez = {
   * @param {number} d - Decimal places for rounding of points (defaults to 2).
   * @returns {string} Path data for an SVG path.
   */
-  build: (ps, c, s = 0.2, d = 2) => ps.reduce((b, p, i) => !i ? 'M' + Bez.r(p, d) :
-    `${b} ${Bez.bp(ps, i, s, d)}`, '') + (c ? 'z' : ''),
+  ier: (ps, c, s = 0.2, d = 2) => ps.reduce((b, p, i) => !i ? 'M' + Bez.r(p, d) :
+    b + Bez.bp(ps, i, s, d), '') + (c ? 'z' : ''),
 
   /**
    * Builds a point with its control points on both sides.
@@ -24,12 +24,9 @@ export const Bez = {
    * @param {number} d - Decimal places for rounding of points.
    * @returns {string}
    */
-  bp: (ps, i, s, d) => 'C'
-    + Bez.r(Bez.cp(ps[i - 1], ps[i - 2], ps[i], s, d), d).join(',')
-    + ' '
-    + Bez.r(Bez.cp(ps[i], ps[i - 1], ps[i + 1], s, d, true), d).join(',')
-    + ' '
-    + Bez.r(ps[i], d),
+  bp: (ps, i, s, d) => 'C' + Bez.r(Bez.cp(ps[i - 1], ps[i - 2], ps[i], s, d), d)
+    + ' ' + Bez.r(Bez.cp(ps[i], ps[i - 1], ps[i + 1], s, d, true), d)
+    + ' ' + Bez.r(ps[i], d),
 
   /**
    * Calculates and builds a control point.

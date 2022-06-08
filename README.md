@@ -1,6 +1,6 @@
 # bezier.onchain.js
 
-A micro JS library (521 bytes) for building SVG bezier paths from an arrays of
+A micro JS library (491 bytes) for building SVG bezier paths from an arrays of
 points.
 
 This library is intended for use in environments where the available storage
@@ -24,8 +24,8 @@ const ps = [
   [160, 60]
 ]
 
-Bez.build(ps)
-// => "M20,30 C24,26 28,4 40,10 C52,16 68,55 80,60 C92,65 88,30 100,35 C112,..."
+Bez.ier(ps)
+// => "M20,30C24,26 28,4 40,10C52,16 68,55 80,60C92,65 88,30 100,35C112,..."
 ```
 
 ![SVG path with default settings](/examples/default.svg)
@@ -34,30 +34,30 @@ Bez.build(ps)
 The second argument takes a boolean value to close the curve:
 
 ```js
-Bez.build(ps, true)
+Bez.ier(ps, true)
 ```
 
 ![Closed SVG path](/examples/default-closed.svg)
 
 ### Adjust smoothing
 The default smoothing is `0.2`, but a different value can be passed as the third
-argument:
+argument.
 
+#### Smoothing of 0.5
 ```js
-Bez.build(ps, false, 0.5)
-// ↓↓↓
+Bez.ier(ps, false, 0.5)
 ```
 ![Smoothing of 0.5](/examples/smoothing-05.svg)
 
+#### Smoothing of 1.0
 ```js
-Bez.build(ps, false, 1)
-// ↓↓↓
+Bez.ier(ps, false, 1)
 ```
 ![Smoothing of 1.0](/examples/smoothing-10.svg)
 
+#### Smoothing of 0
 ```js
-Bez.build(ps, false, 0)
-// ↓↓↓
+Bez.ier(ps, false, 0)
 ```
 ![Smoothing of 0](/examples/smoothing-00.svg)
 
@@ -70,24 +70,24 @@ files.
 Here's an example of an unrounded path string:
 
 ```js
-"M0,0 C0.6283185307179587,0.31415926535897937 1.8849555921538756,0.9424777960769378 3.1415926535897936,1.5707963267948968 C4.39822971502571,2.199114857512855 5.654866776461628,2.827433388230814 6.283185307179587,3.141592653589793"
+"M0,0C0.6283185307179587,0.31415926535897937 1.8849555921538756,0.9424777960769378 3.1415926535897936,1.5707963267948968C4.39822971502571,2.199114857512855 5.654866776461628,2.827433388230814 6.283185307179587,3.141592653589793"
 ```
 
 This library will round points at two decimals places by default, so the same
 path string becomes a lot smaller without loosing visible precision:
 
 ```js
-"M0,0 C0.63,0.31 1.88,0.94 3.14,1.57 C4.4,2.2 5.65,2.83 6.28,3.14"
+"M0,0C0.63,0.31 1.88,0.94 3.14,1.57C4.4,2.2 5.65,2.83 6.28,3.14"
 ```
 
 But this value can be tweaked by passing an integer value to the fourth argument
 of the `build()` method:
 
 ```js
-Bez.build(ps, false, 0.2, 1)
-// => "M0,0 C0.6,0.3 1.9,0.9 3.1,1.6 C4.4,2.2 5.7,2.8 6.3,3.1"
-Bez.build(ps, false, 0.2, 3)
-// => "M0,0 C0.628,0.314 1.885,0.942 3.142,1.571 C4.398,2.199 5.655,2.827 6.283,3.142"
+Bez.ier(ps, false, 0.2, 1)
+// => "M0,0C0.6,0.3 1.9,0.9 3.1,1.6C4.4,2.2 5.7,2.8 6.3,3.1"
+Bez.ier(ps, false, 0.2, 3)
+// => "M0,0C0.628,0.314 1.885,0.942 3.142,1.571C4.398,2.199 5.655,2.827 6.283,3.142"
 ```
 
 ## License
