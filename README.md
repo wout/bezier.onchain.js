@@ -54,7 +54,7 @@ Bez.build(ps, false, 0)
 ```
 ![Smoothing of 0](/examples/smoothing-00.svg)
 
-### Maximum decimal places of points
+### Maximum decimal places for points
 Path data strings can often become quite large if no rounding happens on the
 points. With many elements on the canvas, this will lead to degraded browser
 performance. But saving the document will also result in unnecessarily heavy
@@ -66,19 +66,21 @@ Here's an example of an unrounded path string:
 "M0,0 C0.6283185307179587,0.31415926535897937 1.8849555921538756,0.9424777960769378 3.1415926535897936,1.5707963267948968 C4.39822971502571,2.199114857512855 5.654866776461628,2.827433388230814 6.283185307179587,3.141592653589793"
 ```
 
-This library will roudn points at two decimals by default, so the same path
-string becomes a lot smaller without loosing visible precision:
+This library will round points at two decimals places by default, so the same
+path string becomes a lot smaller without loosing visible precision:
 
 ```js
 "M0,0 C0.63,0.31 1.88,0.94 3.14,1.57 C4.4,2.2 5.65,2.83 6.28,3.14"
 ```
 
-But you could go futher and round to one decimal, which in some scenarios can be
-sufficient. this is done using the fourth argument of the `build()` method:
+But this value can be tweaked by passing an integer value to the fourth argument
+of the `build()` method:
 
 ```js
 Bez.build(ps, false, 0.2, 1)
 // => "M0,0 C0.6,0.3 1.9,0.9 3.1,1.6 C4.4,2.2 5.7,2.8 6.3,3.1"
+Bez.build(ps, false, 0.2, 3)
+// => "M0,0 C0.628,0.314 1.885,0.942 3.142,1.571 C4.398,2.199 5.655,2.827 6.283,3.142"
 ```
 
 ## License
