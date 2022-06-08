@@ -1,6 +1,6 @@
 {
   "name": "bezier.onchain.js",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A micro JS library for converting arrays of points to SVG bezier commands.",
   "main": "bezier.onchain.js",
   "repository": "git@github.com:onchainjs/bezier.onchain.js.git",
