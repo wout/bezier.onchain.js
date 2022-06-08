@@ -81,7 +81,7 @@ path string becomes a lot smaller without loosing visible precision:
 ```
 
 But this value can be tweaked by passing an integer value to the fourth argument
-of the `build()` method:
+of the `Bez.ier()` method:
 
 ```js
 Bez.ier(ps, false, 0.2, 1)
